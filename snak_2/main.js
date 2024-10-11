@@ -33,14 +33,17 @@ function getRndInteger(min, max) {
 
 // ciclo nell"array per avere i songoli oggetti (elementi)
 let singleTeam;
+let newArr = [];
 
 for (let i = 0; i < teams.length; i++) {
     singleTeam = teams[i]; // ottendo le singole squadre dentro all'array
 
-    // ciclo all'interno degli oggetti per poter recuperare e modificare la proprietà 
-    for (const key in singleTeam) {
-        const value = singleTeam[key];
-        console.log(key, value);
-        
-    }
+    const score = singleTeam.score = getRndInteger(1, 50);
+    const fail = singleTeam.fail = getRndInteger(1, 10);
+
+    newArr.push(score, fail);
+
+    // console.log(singleTeam);
 }
+
+console.log(newArr);
