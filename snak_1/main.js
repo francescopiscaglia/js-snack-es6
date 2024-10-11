@@ -12,16 +12,27 @@ const bikes = [
     },
     {
         name: "Road-bike",
-        weight: 10,
+        weight: 5,
     },
     {
         name: "Offroad-bike",
-        weight: 10,
+        weight: 8,
     },
     {
         name: "Mountainbike",
-        weight: 10,
+        weight: 14,
     },
 ];
 
-console.log(bikes);
+// accedere agli elementi dell'array
+for (let i  = 0; i < bikes.length; i++) {
+    const singleBike = bikes[i]; // bici singola
+
+    const bikeWeight = singleBike.weight;
+    console.log(bikeWeight);
+
+
+    
+}
+
+// accedere alla proprietà weight dell'oggetto
