@@ -26,10 +26,6 @@ const teams = [
     },
 ];
 
-// funzione per generare due numeri casuali 
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-};
 
 // ciclo nell"array per avere i songoli oggetti (elementi)
 let singleTeam;
@@ -37,13 +33,21 @@ let newArr = [];
 
 for (let i = 0; i < teams.length; i++) {
     singleTeam = teams[i]; // ottendo le singole squadre dentro all'array
-
-    const score = singleTeam.score = getRndInteger(1, 50);
-    const fail = singleTeam.fail = getRndInteger(1, 10);
-
-    newArr.push(score, fail);
-
-    // console.log(singleTeam);
+    
+    // assegno alle proprietà score e fail due numeri casuali richiamdo la funzione
+    singleTeam.score = getRndInteger(1, 50); 
+    singleTeam.fail = getRndInteger(1, 10);
+    
+    // creo un nuovo oggetto con solamente la proprietà name e fail
+    const newObj = {name: singleTeam.name, fail: singleTeam.fail};
+    
+    // pusho il nuovo oggetto nell'array vuoto
+    newArr.push(newObj);
 }
 
 console.log(newArr);
+
+// funzione per generare due numeri casuali 
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+};
