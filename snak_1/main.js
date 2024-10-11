@@ -24,15 +24,17 @@ const bikes = [
     },
 ];
 
+let arr = [];
+let lowestWeightBike;
 // accedere agli elementi dell'array
 for (let i  = 0; i < bikes.length; i++) {
     const singleBike = bikes[i]; // bici singola
-
-    const bikeWeight = singleBike.weight;
-    console.log(bikeWeight);
-
-
     
+    const bikeWeight = singleBike.weight;
+    arr.push(bikeWeight);
 }
+console.log(arr);
+console.log(Math.min(...arr));
+
 
 // accedere alla proprietà weight dell'oggetto
