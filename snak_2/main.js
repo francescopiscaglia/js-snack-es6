@@ -12,17 +12,17 @@ const teams = [
     {
         name: "LA Lakers",
         score: 0,
-        fail: 0,
+        fouls: 0,
     },
     {
-        name: "GT Warrios",
+        name: "GT Warriors",
         score: 0,
-        fail: 0,
+        fouls: 0,
     },
     {
         name: "Miami Heat",
         score: 0,
-        fail: 0,
+        fouls: 0,
     },
 ];
 
@@ -36,13 +36,15 @@ for (let i = 0; i < teams.length; i++) {
     
     // assegno alle proprietà score e fail due numeri casuali richiamdo la funzione
     singleTeam.score = getRndInteger(1, 50); 
-    singleTeam.fail = getRndInteger(1, 10);
-    
-    // creo un nuovo oggetto con solamente la proprietà name e fail
-    const newObj = {name: singleTeam.name, fail: singleTeam.fail};
+    singleTeam.fouls = getRndInteger(1, 10);
     
     // pusho il nuovo oggetto nell'array vuoto
-    newArr.push(newObj);
+    newArr.push(
+        {
+            name: singleTeam.name, 
+            fail: singleTeam.fouls
+        }
+    );
 }
 
 console.log(newArr);
